@@ -127,9 +127,10 @@ For advance feature such as medusa and speculative decoding Please refer to \[<s
 
 ## start a container 
 1. This is a long running job so start a terminal session with tmux or screen.
-2. Additioanlly install `pip install tqdm coloram openpyxl pandas`
-3. log in to huggingface `huggingface-cli login --token <your token>`
 4. start container with precompiled perf libraries `sudo docker run -it --gpus all --privileged -v ${PWD}/:/workspace_perf -v /raid/supatel/cache:/root/.cache -w /workspace_perf  snlpatel/trtllm-prebuilt:v0.14_release bash`
+2. Additioanlly install `pip install tqdm colorama openpyxl pandas`
+3. git clone git clone -b release/0.14 https://github.com/NVIDIA/TensorRT-LLM.git
+4. log in to huggingface `huggingface-cli login --token <your token>`
   
   `${PWD}` is the location where all the perf will be stored.
   `/raid/supatel/cache` is the location where downloaded hf LLM models will be stored. PLEASE CHANGE THIS LOCATION AS PER YOUR SYSTEM. Both `mpi_run_loop_FP16.sh` and `mpi_run_loop_FP8.sh` must be located at this path. 

@@ -6,6 +6,7 @@ from measure_GPU_util import GPUUtilizationMonitor
 import time 
 import traceback
 import sys
+
 # Set up logging
 log_file = "run_progress_FP16.log"
 def log_message(message):
@@ -45,8 +46,8 @@ model_name = "meta-llama/Meta-Llama-3-70B"
 tp_sizes = [2, 4, 8]
 isl_osl_combinations = [[128 , 2048],[2048, 128]]
 concurrency_values = [2, 4, 8, 16, 32, 64, 128, 256] # 
-batch_size = 8
-num_requests = 300
+# batch_size = 8
+# num_requests = 300
 padding_token = 2
 
 dataset_dir = f"/workspace_perf/dataset_fp16/{model_name}"
