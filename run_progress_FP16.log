@@ -1,0 +1,37 @@
+Run started at Wed Jan 22 23:29:00 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-70B/snapshots/c82494877ce7f6d7d317c56ec081328e382c72fe
+Total combinations to run: 48
+GPUs: 2
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16/meta-llama/Meta-Llama-3-70B
+Checkpoint Conversion done successfully
+Run started at Wed Jan 22 23:38:43 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-70B/snapshots/c82494877ce7f6d7d317c56ec081328e382c72fe
+Total combinations to run: 48
+GPUs: 2
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16/meta-llama/Meta-Llama-3-70B
+Checkpoint Conversion done successfully
+Checkpoint conversion complete for tp_size=2, isl=130, osl=2048
+Processing tp_size=2, isl=130, osl=2048, concurrency=2
+Dataset preparation complete
+Processed for tp_size=2, isl=130, osl=2048, concurrency=2
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+32+2+2.csv
+Completed: tp_size=2, isl=130, osl=2048, concurrency=2
+Processing tp_size=2, isl=130, osl=2048, concurrency=4
+Dataset preparation complete
+Processed for tp_size=2, isl=130, osl=2048, concurrency=4
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+64+4+2.csv
+Completed: tp_size=2, isl=130, osl=2048, concurrency=4
+Processing tp_size=2, isl=130, osl=2048, concurrency=8
+Dataset preparation complete
+Processed for tp_size=2, isl=130, osl=2048, concurrency=8
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+128+8+2.csv
+Completed: tp_size=2, isl=130, osl=2048, concurrency=8
+Processing tp_size=2, isl=130, osl=2048, concurrency=16
+Dataset preparation complete
+Processed for tp_size=2, isl=130, osl=2048, concurrency=16
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+256+16+2.csv
+Completed: tp_size=2, isl=130, osl=2048, concurrency=16
+Processing tp_size=2, isl=130, osl=2048, concurrency=32
+Dataset preparation complete
