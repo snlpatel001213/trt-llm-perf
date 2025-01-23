@@ -40,3 +40,168 @@ Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2
 Completed: tp_size=2, isl=130, osl=2048, concurrency=32
 Processing tp_size=2, isl=130, osl=2048, concurrency=64
 Dataset preparation complete
+Processed for tp_size=2, isl=130, osl=2048, concurrency=64
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+1024+64+2.csv
+Completed: tp_size=2, isl=130, osl=2048, concurrency=64
+Processing tp_size=2, isl=130, osl=2048, concurrency=128
+Dataset preparation complete
+Processed for tp_size=2, isl=130, osl=2048, concurrency=128
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+2048+128+2.csv
+Completed: tp_size=2, isl=130, osl=2048, concurrency=128
+Processing tp_size=2, isl=130, osl=2048, concurrency=256
+Dataset preparation complete
+Processed for tp_size=2, isl=130, osl=2048, concurrency=256
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+4096+256+2.csv
+Completed: tp_size=2, isl=130, osl=2048, concurrency=256
+Checkpoint conversion complete for tp_size=2, isl=2050, osl=128
+Processing tp_size=2, isl=2050, osl=128, concurrency=2
+Dataset preparation complete
+Processed for tp_size=2, isl=2050, osl=128, concurrency=2
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+32+2+2.csv
+Completed: tp_size=2, isl=2050, osl=128, concurrency=2
+Processing tp_size=2, isl=2050, osl=128, concurrency=4
+Dataset preparation complete
+Processed for tp_size=2, isl=2050, osl=128, concurrency=4
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+64+4+2.csv
+Completed: tp_size=2, isl=2050, osl=128, concurrency=4
+Processing tp_size=2, isl=2050, osl=128, concurrency=8
+Dataset preparation complete
+Processed for tp_size=2, isl=2050, osl=128, concurrency=8
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+128+8+2.csv
+Completed: tp_size=2, isl=2050, osl=128, concurrency=8
+Processing tp_size=2, isl=2050, osl=128, concurrency=16
+Dataset preparation complete
+Processed for tp_size=2, isl=2050, osl=128, concurrency=16
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+256+16+2.csv
+Completed: tp_size=2, isl=2050, osl=128, concurrency=16
+Processing tp_size=2, isl=2050, osl=128, concurrency=32
+Dataset preparation complete
+Processed for tp_size=2, isl=2050, osl=128, concurrency=32
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+512+32+2.csv
+Completed: tp_size=2, isl=2050, osl=128, concurrency=32
+Processing tp_size=2, isl=2050, osl=128, concurrency=64
+Dataset preparation complete
+Processed for tp_size=2, isl=2050, osl=128, concurrency=64
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+1024+64+2.csv
+Completed: tp_size=2, isl=2050, osl=128, concurrency=64
+Processing tp_size=2, isl=2050, osl=128, concurrency=128
+Dataset preparation complete
+Processed for tp_size=2, isl=2050, osl=128, concurrency=128
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+2048+128+2.csv
+Completed: tp_size=2, isl=2050, osl=128, concurrency=128
+Processing tp_size=2, isl=2050, osl=128, concurrency=256
+Dataset preparation complete
+Processed for tp_size=2, isl=2050, osl=128, concurrency=256
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+4096+256+2.csv
+Completed: tp_size=2, isl=2050, osl=128, concurrency=256
+GPUs: 4
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16/meta-llama/Meta-Llama-3-70B
+Checkpoint Conversion done successfully
+Checkpoint conversion complete for tp_size=4, isl=130, osl=2048
+Processing tp_size=4, isl=130, osl=2048, concurrency=2
+Dataset preparation complete
+Processed for tp_size=4, isl=130, osl=2048, concurrency=2
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+32+2+4.csv
+Completed: tp_size=4, isl=130, osl=2048, concurrency=2
+Processing tp_size=4, isl=130, osl=2048, concurrency=4
+Dataset preparation complete
+Processed for tp_size=4, isl=130, osl=2048, concurrency=4
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+64+4+4.csv
+Completed: tp_size=4, isl=130, osl=2048, concurrency=4
+Processing tp_size=4, isl=130, osl=2048, concurrency=8
+Dataset preparation complete
+Processed for tp_size=4, isl=130, osl=2048, concurrency=8
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+128+8+4.csv
+Completed: tp_size=4, isl=130, osl=2048, concurrency=8
+Processing tp_size=4, isl=130, osl=2048, concurrency=16
+Dataset preparation complete
+Processed for tp_size=4, isl=130, osl=2048, concurrency=16
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+256+16+4.csv
+Completed: tp_size=4, isl=130, osl=2048, concurrency=16
+Processing tp_size=4, isl=130, osl=2048, concurrency=32
+Dataset preparation complete
+Processed for tp_size=4, isl=130, osl=2048, concurrency=32
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+512+32+4.csv
+Completed: tp_size=4, isl=130, osl=2048, concurrency=32
+Processing tp_size=4, isl=130, osl=2048, concurrency=64
+Dataset preparation complete
+Processed for tp_size=4, isl=130, osl=2048, concurrency=64
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+1024+64+4.csv
+Completed: tp_size=4, isl=130, osl=2048, concurrency=64
+Processing tp_size=4, isl=130, osl=2048, concurrency=128
+Dataset preparation complete
+Processed for tp_size=4, isl=130, osl=2048, concurrency=128
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+2048+128+4.csv
+Completed: tp_size=4, isl=130, osl=2048, concurrency=128
+Processing tp_size=4, isl=130, osl=2048, concurrency=256
+Dataset preparation complete
+Processed for tp_size=4, isl=130, osl=2048, concurrency=256
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+4096+256+4.csv
+Completed: tp_size=4, isl=130, osl=2048, concurrency=256
+Checkpoint conversion complete for tp_size=4, isl=2050, osl=128
+Processing tp_size=4, isl=2050, osl=128, concurrency=2
+Dataset preparation complete
+Processed for tp_size=4, isl=2050, osl=128, concurrency=2
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+32+2+4.csv
+Completed: tp_size=4, isl=2050, osl=128, concurrency=2
+Processing tp_size=4, isl=2050, osl=128, concurrency=4
+Dataset preparation complete
+Processed for tp_size=4, isl=2050, osl=128, concurrency=4
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+64+4+4.csv
+Completed: tp_size=4, isl=2050, osl=128, concurrency=4
+Processing tp_size=4, isl=2050, osl=128, concurrency=8
+Dataset preparation complete
+Processed for tp_size=4, isl=2050, osl=128, concurrency=8
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+128+8+4.csv
+Completed: tp_size=4, isl=2050, osl=128, concurrency=8
+Processing tp_size=4, isl=2050, osl=128, concurrency=16
+Dataset preparation complete
+Processed for tp_size=4, isl=2050, osl=128, concurrency=16
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+256+16+4.csv
+Completed: tp_size=4, isl=2050, osl=128, concurrency=16
+Processing tp_size=4, isl=2050, osl=128, concurrency=32
+Dataset preparation complete
+Processed for tp_size=4, isl=2050, osl=128, concurrency=32
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+512+32+4.csv
+Completed: tp_size=4, isl=2050, osl=128, concurrency=32
+Processing tp_size=4, isl=2050, osl=128, concurrency=64
+Dataset preparation complete
+Processed for tp_size=4, isl=2050, osl=128, concurrency=64
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+1024+64+4.csv
+Completed: tp_size=4, isl=2050, osl=128, concurrency=64
+Processing tp_size=4, isl=2050, osl=128, concurrency=128
+Dataset preparation complete
+Processed for tp_size=4, isl=2050, osl=128, concurrency=128
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+2048+128+4.csv
+Completed: tp_size=4, isl=2050, osl=128, concurrency=128
+Processing tp_size=4, isl=2050, osl=128, concurrency=256
+Dataset preparation complete
+Processed for tp_size=4, isl=2050, osl=128, concurrency=256
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+4096+256+4.csv
+Completed: tp_size=4, isl=2050, osl=128, concurrency=256
+GPUs: 8
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16/meta-llama/Meta-Llama-3-70B
+Checkpoint Conversion done successfully
+Checkpoint conversion complete for tp_size=8, isl=130, osl=2048
+Processing tp_size=8, isl=130, osl=2048, concurrency=2
+Dataset preparation complete
+Processed for tp_size=8, isl=130, osl=2048, concurrency=2
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+32+2+8.csv
+Completed: tp_size=8, isl=130, osl=2048, concurrency=2
+Processing tp_size=8, isl=130, osl=2048, concurrency=4
+Dataset preparation complete
+Processed for tp_size=8, isl=130, osl=2048, concurrency=4
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+64+4+8.csv
+Completed: tp_size=8, isl=130, osl=2048, concurrency=4
+Processing tp_size=8, isl=130, osl=2048, concurrency=8
+Dataset preparation complete
+Processed for tp_size=8, isl=130, osl=2048, concurrency=8
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+128+8+8.csv
+Completed: tp_size=8, isl=130, osl=2048, concurrency=8
+Processing tp_size=8, isl=130, osl=2048, concurrency=16
+Dataset preparation complete
+Processed for tp_size=8, isl=130, osl=2048, concurrency=16
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+256+16+8.csv
+Completed: tp_size=8, isl=130, osl=2048, concurrency=16
+Processing tp_size=8, isl=130, osl=2048, concurrency=32
+Dataset preparation complete

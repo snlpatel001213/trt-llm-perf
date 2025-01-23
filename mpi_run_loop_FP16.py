@@ -29,13 +29,13 @@ log_message(f"Run started at {os.popen('date').read().strip()}")
 
 def concurrency2request(concurrency):
     concurrency2reqmap = {
-        "2":32,
-        "4":64,
-        "8":128,
-        "16":256,
-        "32":512,
+        "2":1024,
+        "4":1024,
+        "8":1024,
+        "16":1024,
+        "32":1024,
         "64":1024,
-        "128":2048,
+        "128":4096,
         "256":4096  
     }
     return str(concurrency2reqmap[str(concurrency)])

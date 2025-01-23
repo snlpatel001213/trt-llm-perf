@@ -19,3 +19,5 @@ result_fp8
 converted-checkpoint-dir_fp16
 converted-checkpoint-dir_quant_fp8
 dataset.json
+run_progress_FP8.log
+run_progress_FP16.log
