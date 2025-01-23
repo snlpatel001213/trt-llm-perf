@@ -87,19 +87,20 @@ progress = tqdm(total=total_combinations, desc="Running combinations", colour="b
 for tp_size in tp_sizes:
     print(Fore.CYAN + f"GPUs: {tp_size}" + Style.RESET_ALL)
     log_message(f"GPUs: {tp_size}")
-
-    os.makedirs(converted_checkpoint_dir, exist_ok=True)
-    log_message(f"Storing converted checkpoint at: {converted_checkpoint_dir}")
-    checkpoint_param = [
-        "python3", "/workspace_perf/TensorRT-LLM/examples/llama/convert_checkpoint.py",
-        "--model_dir", model_path,
-        "--output_dir", converted_checkpoint_dir,
-        "--dtype", "bfloat16",
-        "--tp_size", str(tp_size)
-    ]
-    print("checkpoint_param: ", checkpoint_param)
-    subprocess.run(checkpoint_param)
-    log_message("Checkpoint Conversion done successfully")
+    
+    # NOT REQUIRED 
+    # os.makedirs(converted_checkpoint_dir, exist_ok=True)
+    # log_message(f"Storing converted checkpoint at: {converted_checkpoint_dir}")
+    # checkpoint_param = [
+    #     "python3", "/workspace_perf/TensorRT-LLM/examples/llama/convert_checkpoint.py",
+    #     "--model_dir", model_path,
+    #     "--output_dir", converted_checkpoint_dir,
+    #     "--dtype", "bfloat16",
+    #     "--tp_size", str(tp_size)
+    # ]
+    # print("checkpoint_param: ", checkpoint_param)
+    # subprocess.run(checkpoint_param)
+    # log_message("Checkpoint Conversion done successfully")
     
     # quantize
     os.makedirs(quant_converted_checkpoint_dir, exist_ok=True)

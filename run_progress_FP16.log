@@ -35,3 +35,8 @@ Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2
 Completed: tp_size=2, isl=130, osl=2048, concurrency=16
 Processing tp_size=2, isl=130, osl=2048, concurrency=32
 Dataset preparation complete
+Processed for tp_size=2, isl=130, osl=2048, concurrency=32
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/130+2048+512+32+2.csv
+Completed: tp_size=2, isl=130, osl=2048, concurrency=32
+Processing tp_size=2, isl=130, osl=2048, concurrency=64
+Dataset preparation complete
