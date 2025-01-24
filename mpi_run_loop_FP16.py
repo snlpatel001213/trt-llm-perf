@@ -10,6 +10,7 @@ import sys
 # Set up logging
 log_file = "run_progress_FP16.log"
 def log_message(message):
+    print(Fore.GREEN + str(message) + Style.RESET_ALL)
     with open(log_file, "a") as log:
         log.write(f"{message}\n")
         log.flush()
@@ -43,9 +44,9 @@ def concurrency2request(concurrency):
 
 # Define parameters
 model_name = "meta-llama/Meta-Llama-3-70B"
-tp_sizes = [2, 4, 8]
-isl_osl_combinations = [[128 , 2048],[2048, 128]]
-concurrency_values = [2, 4, 8, 16, 32, 64, 128, 256] # 
+tp_sizes = [8]
+isl_osl_combinations = [[128,128]]#[[3100, 200],[12125, 500],[128,128]]
+concurrency_values = [8, 16, 32] #[2, 4, 8, 16, 32, 64, 128, 256] # 
 # batch_size = 8
 # num_requests = 300
 padding_token = 2
@@ -95,8 +96,8 @@ for tp_size in tp_sizes:
         "--tp_size", str(tp_size),
         "--pp_size","1"
     ]
-    subprocess.run(checkpoint_param)
     print("checkpoint_param :", checkpoint_param)
+    subprocess.run(checkpoint_param)
     log_message("Checkpoint Conversion done successfully")
 
     for isl_osl in isl_osl_combinations:

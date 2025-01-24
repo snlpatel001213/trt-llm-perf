@@ -1,1 +1,19 @@
 
+Run started at Thu Jan 23 12:33:15 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-70B/snapshots/c82494877ce7f6d7d317c56ec081328e382c72fe
+Total combinations to run: 24
+GPUs: 2
+Storing quantized checkpoint at: /workspace_perf/converted-checkpoint-dir_quant_fp8/meta-llama/Meta-Llama-3-70B
+Checkpoint conversion complete for tp_size=2, isl=130, osl=2048
+Processing tp_size=2, isl=130, osl=2048, concurrency=2
+Dataset preparation complete
+Run started at Thu Jan 23 13:22:09 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-70B/snapshots/c82494877ce7f6d7d317c56ec081328e382c72fe
+Total combinations to run: 24
+GPUs: 2
+Storing quantized checkpoint at: /workspace_perf/converted-checkpoint-dir_quant_fp8/meta-llama/Meta-Llama-3-70B
+Checkpoint conversion complete for tp_size=2, isl=130, osl=2048
+Processing tp_size=2, isl=130, osl=2048, concurrency=2
+Dataset preparation complete
