@@ -1,5 +1,5 @@
-from pynvml import nvmlDeviceResetNvLinkUtilizationCounter , nvmlInit, nvmlDeviceGetNvLinkUtilizationCounter, link
+from pynvml import nvmlDeviceResetNvLinkUtilizationCounter , nvmlInit, nvmlDeviceGetNvLinkUtilizationCounter, 
 nvmlInit()
 
 
-nvmlDeviceGetNvLinkUtilizationCounter(0,1,1)
+print(nvmlDeviceGetBAR1MemoryInfo())

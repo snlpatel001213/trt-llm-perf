@@ -10,7 +10,7 @@
 4. log in to huggingface `huggingface-cli login --token <your token>`
   
   `${PWD}` is the location where all the perf will be stored.
-  `/raid/supatel/cache` is the location where downloaded hf LLM models will be stored. PLEASE CHANGE THIS LOCATION AS PER YOUR SYSTEM. Both `mpi_run_loop_FP16.py` and `mpi_run_loop_FP8.sh` must be located at this path. 
+  `/raid/supatel/cache` is the location where downloaded hf LLM models will be stored. PLEASE CHANGE THIS LOCATION AS PER YOUR SYSTEM. Both `mpi_run_loop_FP16.py` and `mpi_run_loop_FP8.py` must be located at this path. 
 
 # run the test - FP16
 
@@ -20,7 +20,7 @@
 
 # run the test - FP8
 
-1. run `python mpi_run_loop_FP8.bash` inside the container.
+1. run `python mpi_run_loop_FP8.py` inside the container.
 2. As it compeletes the perf testing each permutation will create its own log and result file.
 
 

@@ -39,11 +39,11 @@ def main(input_folder):
                     try:
                         df = pd.read_csv(file_path)
                         # Verify if the data structure matches the expected format
-                        if not df.empty and len(df.columns) == 29:
+                        if not df.empty :
                             for _, row in df.iterrows():
                                 final_data.append([
                                     isl, osl, num_requests, concurrency, num_gpus, *row.values
-                                ])
+                                ])                                
                     except Exception as e:
                         print(f"Error reading {file}: {e}")
 
