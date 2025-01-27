@@ -38,15 +38,18 @@ def concurrency2request(concurrency):
         "32":1024,
         "64":1024,
         "128":4096,
-        "256":4096  
+        "256":4096
     }
     return str(concurrency2reqmap[str(concurrency)])
 
 # Define parameters
 model_name = "meta-llama/Meta-Llama-3-70B"
 tp_sizes = [8]
-isl_osl_combinations = [[128,128]]#[[3100, 200],[12125, 500],[128,128]]
+isl_osl_combinations = [[128,2048],[2048,128]]
 concurrency_values = [8, 16, 32] #[2, 4, 8, 16, 32, 64, 128, 256] # 
+# tp_sizes = [8]
+# isl_osl_combinations = [[3100, 200],[12125, 500],[128,128]]
+# concurrency_values = [8, 16, 32] #[2, 4, 8, 16, 32, 64, 128, 256] # 
 # batch_size = 8
 # num_requests = 300
 padding_token = 2

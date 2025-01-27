@@ -1,0 +1,43 @@
+Run started at Fri Jan 24 13:15:16 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-70B/snapshots/c82494877ce7f6d7d317c56ec081328e382c72fe
+Total combinations to run: 9
+GPUs: 8
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16/meta-llama/Meta-Llama-3-70B
+Checkpoint Conversion done successfully
+Engine  creation complete for tp_size=8, isl=3102, osl=200
+Processing tp_size=8, isl=3102, osl=200, concurrency=8
+Dataset preparation complete
+Processed for tp_size=8, isl=3102, osl=200, concurrency=8
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/3102+200+1024+8+8.csv
+Completed: tp_size=8, isl=3102, osl=200, concurrency=8
+Processing tp_size=8, isl=3102, osl=200, concurrency=16
+Dataset preparation complete
+Processed for tp_size=8, isl=3102, osl=200, concurrency=16
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/3102+200+1024+16+8.csv
+Completed: tp_size=8, isl=3102, osl=200, concurrency=16
+Processing tp_size=8, isl=3102, osl=200, concurrency=32
+Dataset preparation complete
+Processed for tp_size=8, isl=3102, osl=200, concurrency=32
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/3102+200+1024+32+8.csv
+Completed: tp_size=8, isl=3102, osl=200, concurrency=32
+Engine  creation complete for tp_size=8, isl=12127, osl=500
+Processing tp_size=8, isl=12127, osl=500, concurrency=8
+Dataset preparation complete
+Processed for tp_size=8, isl=12127, osl=500, concurrency=8
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/12127+500+1024+8+8.csv
+Completed: tp_size=8, isl=12127, osl=500, concurrency=8
+Processing tp_size=8, isl=12127, osl=500, concurrency=16
+Dataset preparation complete
+Processed for tp_size=8, isl=12127, osl=500, concurrency=16
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/12127+500+1024+16+8.csv
+Completed: tp_size=8, isl=12127, osl=500, concurrency=16
+Processing tp_size=8, isl=12127, osl=500, concurrency=32
+Run started at Fri Jan 24 13:49:34 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-70B/snapshots/c82494877ce7f6d7d317c56ec081328e382c72fe
+Total combinations to run: 9
+GPUs: 8
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16/meta-llama/Meta-Llama-3-70B
+Checkpoint Conversion done successfully
+Engine  creation complete for tp_size=8, isl=3102, osl=200
