@@ -29,3 +29,12 @@ Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+
 Completed: tp_size=8, isl=2050, osl=128, concurrency=8
 Processing tp_size=8, isl=2050, osl=128, concurrency=16
 Dataset preparation complete
+Processed for tp_size=8, isl=2050, osl=128, concurrency=16
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+1024+16+8.csv
+Completed: tp_size=8, isl=2050, osl=128, concurrency=16
+Processing tp_size=8, isl=2050, osl=128, concurrency=32
+Dataset preparation complete
+Processed for tp_size=8, isl=2050, osl=128, concurrency=32
+Written result to: /workspace_perf/result_fp16/meta-llama/Meta-Llama-3-70B/2050+128+1024+32+8.csv
+Completed: tp_size=8, isl=2050, osl=128, concurrency=32
+Run processed at Mon Jan 27 06:11:02 UTC 2025
