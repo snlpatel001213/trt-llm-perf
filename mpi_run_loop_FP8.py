@@ -109,7 +109,7 @@ for tp_size in tp_sizes:
                 "python", "/app/tensorrt_llm/examples/quantization/quantize.py",
                 "--model_dir",model_path,
                 "--output_dir",quant_converted_checkpoint_dir,
-                "--dtype","float16",
+                "--dtype","bfloat16",
                 "--qformat","fp8",
                 "--kv_cache_dtype","fp8",
                 "--calib_size","512",
