@@ -3,12 +3,31 @@ import subprocess
 from tqdm import tqdm
 from colorama import Fore, Style
 from measure_GPU_util import GPUUtilizationMonitor
+import http.client, urllib
 
 import time 
 
 # Set up logging
 
-log_file = "run_progress_FP8.log"
+# test name allows to define short description about run 
+TEST_NAME = "PREFILL_TEST"
+log_file = f"run_progress_FP8-{TEST_NAME}.log"
+PUSH_PROGRESS = 0 # set to 0 if you dont want to see the progress
+def pushover(data):
+    """
+    https://pushover.net
+    Pushover makes it easy to get real-time notifications on your Android, iPhone, iPad, and Desktop (Android Wear and Apple Watch, too!)
+    """
+    pushover_toekn = "" # generate token at https://pushover.net
+    conn = http.client.HTTPSConnection("api.pushover.net:443")
+    if pushover_toekn:
+        conn.request("POST", "/1/messages.json",
+        urllib.parse.urlencode({
+            "token": pushover_toekn,
+            "user": "Sunil",
+            "message": str(data),
+        }), { "Content-type": "application/x-www-form-urlencoded" })
+        conn.getresponse()
 
 def log_message(message):
     with open(log_file, "a") as log:
@@ -43,19 +62,20 @@ def concurrency2request(concurrency):
     }
     return str(concurrency2reqmap[str(concurrency)])
 
+
 # Define parameters
 model_name = "meta-llama/Meta-Llama-3-70B"
-tp_sizes = [2, 4, 8]
-isl_osl_combinations = [[128 , 2048]]
-concurrency_values = [2, 4, 8, 16, 32, 64, 128, 256] #
+tp_sizes = [8]
+isl_osl_combinations = [[128 , 1],[256 , 1],[512 , 1],[1024 , 1],[2048 , 1],[4096 , 1]]
+concurrency_values = [2,4,8,16,32,64,128]
 batch_size = 8
 num_requests = 300
 padding_token = 2
 
-dataset_dir = f"/workspace_perf/dataset_fp8/{model_name}"
-result_dir = f"/workspace_perf/result_fp8/{model_name}"
-converted_checkpoint_dir = f"/workspace_perf/converted-checkpoint-dir_fp8/{model_name}"
-quant_converted_checkpoint_dir = f"/workspace_perf/converted-checkpoint-dir_quant_fp8/{model_name}"
+dataset_dir = f"/workspace_perf/dataset_fp8-{TEST_NAME}/{model_name}"
+result_dir = f"/workspace_perf/result_fp8-{TEST_NAME}/{model_name}"
+converted_checkpoint_dir = f"/workspace_perf/converted-checkpoint-dir_fp8-{TEST_NAME}/{model_name}"
+quant_converted_checkpoint_dir = f"/workspace_perf/converted-checkpoint-dir_quant_fp8-{TEST_NAME}/{model_name}"
 
 os.makedirs(dataset_dir, exist_ok=True)
 os.makedirs(result_dir, exist_ok=True)
@@ -80,27 +100,13 @@ completed_steps = read_log_progress()
 total_combinations = len(tp_sizes) * len(isl_osl_combinations) * len(concurrency_values)
 log_message(f"Total combinations to run: {total_combinations}")
 print(Fore.YELLOW + f"Total combinations to run: {total_combinations}" + Style.RESET_ALL)
-
+remaining_combinations = total_combinations
 # Iterate over combinations
 progress = tqdm(total=total_combinations, desc="Running combinations", colour="blue")
 
 for tp_size in tp_sizes:
     print(Fore.CYAN + f"GPUs: {tp_size}" + Style.RESET_ALL)
     log_message(f"GPUs: {tp_size}")
-    
-    # NOT REQUIRED 
-    # os.makedirs(converted_checkpoint_dir, exist_ok=True)
-    # log_message(f"Storing converted checkpoint at: {converted_checkpoint_dir}")
-    # checkpoint_param = [
-    #     "python3", "/workspace_perf/TensorRT-LLM/examples/llama/convert_checkpoint.py",
-    #     "--model_dir", model_path,
-    #     "--output_dir", converted_checkpoint_dir,
-    #     "--dtype", "bfloat16",
-    #     "--tp_size", str(tp_size)
-    # ]
-    # print("checkpoint_param: ", checkpoint_param)
-    # subprocess.run(checkpoint_param)
-    # log_message("Checkpoint Conversion done successfully")
     
     # quantize
     os.makedirs(quant_converted_checkpoint_dir, exist_ok=True)
@@ -123,7 +129,7 @@ for tp_size in tp_sizes:
         isl += padding_token
         
         # Build TensorRT engine for ISL/OSL and max concurrency
-        engine_dir = f"/workspace_perf/engine-dir_fp8/{model_name}+{isl}+{osl}+{tp_size}"
+        engine_dir = f"/workspace_perf/engine-dir_fp8-{TEST_NAME}/{model_name}+{isl}+{osl}+{tp_size}"
         engine_param = [ 
             "trtllm-build",
             "--checkpoint_dir",quant_converted_checkpoint_dir,
@@ -206,11 +212,14 @@ for tp_size in tp_sizes:
             # Clean up specific dataset after each run
             subprocess.run(["rm", "-rf", dataset])
             subprocess.run(["python3", "compile_results.py", "--input_folder", result_dir])
+            if PUSH_PROGRESS:
+                pushover(f"Completed for tp_size={tp_size}, isl={isl}, osl={osl}, concurrency={concurrency}, remianing combinaions : {remaining_combinations}")
+            remaining_combinations = remaining_combinations-1
         # remove and refresh engine after each ISL/OSL and Concurrency change
         # subprocess.run(["rm", "-rf", engine_dir]) TODO uncomment his
     # Remove converted checkpoint dir after each tp
-    subprocess.run(["rm", "-rf", converted_checkpoint_dir])
-    subprocess.run(["rm", "-rf", quant_converted_checkpoint_dir])
+    # subprocess.run(["rm", "-rf", converted_checkpoint_dir])
+    # subprocess.run(["rm", "-rf", quant_converted_checkpoint_dir])
 
 progress.close()
 log_message(f"Run processed at {os.popen('date').read().strip()}")

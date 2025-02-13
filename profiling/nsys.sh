@@ -1,0 +1,1 @@
+nsys profile --trace 'nvtx,cuda,osrt,cudnn' -c cudaProfilerApi  -o /workspace_perf/profiling/fp8_tp2  python3 /workspace_perf/mpi_run_loop_FP8.py

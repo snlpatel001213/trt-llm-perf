@@ -22,3 +22,8 @@ dataset.json
 run_progress_FP8.log
 run_progress_FP16.log
 engine-dir_fp8
+plotting_
+converted-checkpoint-dir_quant_fp8-PREFILL_TEST
+engine-dir_fp8-PREFILL_TEST
+dataset_fp8-PREFILL_TEST
+profiling/fp8_tp2.nsys-rep
