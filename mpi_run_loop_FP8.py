@@ -10,7 +10,7 @@ import time
 # Set up logging
 
 # test name allows to define short description about run 
-TEST_NAME = "PREFILL_TEST"
+TEST_NAME = "RIL_MAIN_TEST"
 log_file = f"run_progress_FP8-{TEST_NAME}.log"
 PUSH_PROGRESS = 0 # set to 0 if you dont want to see the progress
 def pushover(data):

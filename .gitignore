@@ -27,3 +27,6 @@ converted-checkpoint-dir_quant_fp8-PREFILL_TEST
 engine-dir_fp8-PREFILL_TEST
 dataset_fp8-PREFILL_TEST
 profiling/fp8_tp2.nsys-rep
+converted-checkpoint-dir_fp16-RIL_MAIN_TEST
+dataset_fp16-RIL_MAIN_TEST
+engine-dir_fp16-RIL_MAIN_TEST

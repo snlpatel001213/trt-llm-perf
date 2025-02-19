@@ -6,9 +6,29 @@ from measure_GPU_util import GPUUtilizationMonitor
 import time 
 import traceback
 import sys
+import http.client, urllib
 
+TEST_NAME = "RIL_MAIN_TEST"
 # Set up logging
-log_file = "run_progress_FP16.log"
+log_file = f"run_progress_FP16-{TEST_NAME}.log"
+
+PUSH_PROGRESS = 0 # set to 0 if you dont want to see the progress
+def pushover(data):
+    """
+    https://pushover.net
+    Pushover makes it easy to get real-time notifications on your Android, iPhone, iPad, and Desktop (Android Wear and Apple Watch, too!)
+    """
+    pushover_toekn = "ummd68brovb7r8c4enyzq2tz155c6s" # generate token at https://pushover.net
+    conn = http.client.HTTPSConnection("api.pushover.net:443")
+    if pushover_toekn:
+        conn.request("POST", "/1/messages.json",
+        urllib.parse.urlencode({
+            "token": pushover_toekn,
+            "user": "Sunil",
+            "message": str(data),
+        }), { "Content-type": "application/x-www-form-urlencoded" })
+        conn.getresponse()
+
 def log_message(message):
     print(Fore.GREEN + str(message) + Style.RESET_ALL)
     with open(log_file, "a") as log:
@@ -44,9 +64,16 @@ def concurrency2request(concurrency):
 
 # Define parameters
 model_name = "meta-llama/Meta-Llama-3-70B"
-tp_sizes = [2, 4, 8]
-isl_osl_combinations = [[128 , 2048],[2048, 128]]
-concurrency_values = [2, 4, 8, 16, 32, 64, 128, 256] #
+tp_sizes = [8]
+isl_osl_combinations = [
+    [128, 128], [256, 128], [512, 128], [1024, 128], [2048, 128], [4096, 128],
+    [128, 256], [256, 256], [512, 256], [1024, 256], [2048, 256], [4096, 256],
+    [128, 512], [256, 512], [512, 512], [1024, 512], [2048, 512], [4096, 512],
+    [128, 1024], [256, 1024], [512, 1024], [1024, 1024], [2048, 1024], [4096, 1024],
+    [128, 2048], [256, 2048], [512, 2048], [1024, 2048], [2048, 2048], [4096, 2048],
+    [128, 4096], [256, 4096], [512, 4096], [1024, 4096], [2048, 4096], [4096, 4096]
+]
+concurrency_values = [2, 8, 32, 128] #
 # tp_sizes = [8]
 # isl_osl_combinations = [[3100, 200],[12125, 500],[128,128]]
 # concurrency_values = [8, 16, 32] #[2, 4, 8, 16, 32, 64, 128, 256] # 
@@ -54,9 +81,9 @@ concurrency_values = [2, 4, 8, 16, 32, 64, 128, 256] #
 # num_requests = 300
 padding_token = 2
 
-dataset_dir = f"/workspace_perf/dataset_fp16/{model_name}"
-result_dir = f"/workspace_perf/result_fp16/{model_name}"
-converted_checkpoint_dir = f"/workspace_perf/converted-checkpoint-dir_fp16/{model_name}"
+dataset_dir = f"/workspace_perf/dataset_fp16-{TEST_NAME}/{model_name}"
+result_dir = f"/workspace_perf/result_fp16-{TEST_NAME}/{model_name}"
+converted_checkpoint_dir = f"/workspace_perf/converted-checkpoint-dir_fp16-{TEST_NAME}/{model_name}"
 
 os.makedirs(dataset_dir, exist_ok=True)
 os.makedirs(result_dir, exist_ok=True)
@@ -81,6 +108,7 @@ except subprocess.CalledProcessError as e:
 total_combinations = len(tp_sizes) * len(isl_osl_combinations) * len(concurrency_values)
 log_message(f"Total combinations to run: {total_combinations}")
 print(Fore.YELLOW + f"Total combinations to run: {total_combinations}" + Style.RESET_ALL)
+pushover(f"Starting RIL Main run with FP16 , total combination to run : {total_combinations}")
 
 # Iterate over combinations
 progress = tqdm(total=total_combinations, desc="Running combinations", colour="blue")
@@ -108,7 +136,7 @@ for tp_size in tp_sizes:
         isl += padding_token
         
         # Build TensorRT engine for ISL/OSL and max concurrency
-        engine_dir = f"/workspace_perf/engine-dir_fp16/{model_name}+{isl}+{osl}+{tp_size}"
+        engine_dir = f"/workspace_perf/engine-dir_fp16-{TEST_NAME}/{model_name}+{isl}+{osl}+{tp_size}"
         engine_param = [
                     "trtllm-build",
                     "--checkpoint_dir",converted_checkpoint_dir,
@@ -125,7 +153,7 @@ for tp_size in tp_sizes:
                     "--multiple_profiles","enable",
                     ]
         if  os.path.exists(engine_dir):
-            is_empty_engine = os.listdir(engine_dir) == 0 # retuens true if dir is empty
+            is_empty_engine = os.listdir(engine_dir) == [] # retuens true if dir is empty
             if (is_empty_engine):
                 print("building the engine as engine dir exists but emptry, engine param :", engine_param)
                 subprocess.run(engine_param)
@@ -201,6 +229,10 @@ for tp_size in tp_sizes:
                 # Clean up specific dataset after each run
                 subprocess.run(["rm", "-rf", dataset])
                 subprocess.run(["python3", "compile_results.py", "--input_folder", result_dir])
+                if PUSH_PROGRESS:
+                    pushover(f"Completed for tp_size={tp_size}, isl={isl}, osl={osl}, concurrency={concurrency}, remianing combinaions : {remaining_combinations}")
+                remaining_combinations = remaining_combinations-1
+        
             except Exception as  e:
                 print(f"Error: {str(traceback.format_exc())}")
                 sys.exit(1)
