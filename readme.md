@@ -14,14 +14,16 @@
 
 # run the test - FP16
 
-1. run `python mpi_run_loop_FP16.py` inside the container.
-2. As it compeletes the perf testing each permutation will create its own log and result file.
+1. Define test name, TP size, ISL, OSL, an concurrency
+2. run `python mpi_run_loop_FP16.py` inside the container.
+3. As it compeletes the perf testing each permutation will create its own log and result file.
 
 
 # run the test - FP8
 
-1. run `python mpi_run_loop_FP8.py` inside the container.
-2. As it compeletes the perf testing each permutation will create its own log and result file.
+1. Define test name, TP size, ISL, OSL, an concurrency
+2. run `python mpi_run_loop_FP8.py` inside the container.
+3. As it compeletes the perf testing each permutation will create its own log and result file.
 
 
 
