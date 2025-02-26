@@ -8,26 +8,11 @@ import traceback
 import sys
 import http.client, urllib
 
+#define test name
 TEST_NAME = "RIL_MAIN_TEST"
 # Set up logging
 log_file = f"run_progress_FP16-{TEST_NAME}.log"
 
-PUSH_PROGRESS = 0 # set to 0 if you dont want to see the progress
-def pushover(data):
-    """
-    https://pushover.net
-    Pushover makes it easy to get real-time notifications on your Android, iPhone, iPad, and Desktop (Android Wear and Apple Watch, too!)
-    """
-    pushover_toekn = "ummd68brovb7r8c4enyzq2tz155c6s" # generate token at https://pushover.net
-    conn = http.client.HTTPSConnection("api.pushover.net:443")
-    if pushover_toekn:
-        conn.request("POST", "/1/messages.json",
-        urllib.parse.urlencode({
-            "token": pushover_toekn,
-            "user": "Sunil",
-            "message": str(data),
-        }), { "Content-type": "application/x-www-form-urlencoded" })
-        conn.getresponse()
 
 def log_message(message):
     print(Fore.GREEN + str(message) + Style.RESET_ALL)
@@ -229,8 +214,8 @@ for tp_size in tp_sizes:
                 # Clean up specific dataset after each run
                 subprocess.run(["rm", "-rf", dataset])
                 subprocess.run(["python3", "compile_results.py", "--input_folder", result_dir])
-                if PUSH_PROGRESS:
-                    pushover(f"Completed for tp_size={tp_size}, isl={isl}, osl={osl}, concurrency={concurrency}, remianing combinaions : {remaining_combinations}")
+               
+                print(f"Completed for tp_size={tp_size}, isl={isl}, osl={osl}, concurrency={concurrency}, remianing combinaions : {remaining_combinations}")
                 remaining_combinations = remaining_combinations-1
         
             except Exception as  e:
