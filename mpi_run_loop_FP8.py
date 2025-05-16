@@ -69,8 +69,9 @@ print(Fore.GREEN + "Downloading model..." + Style.RESET_ALL)
 log_message("Downloading model...")
 
 try:
-    output = subprocess.check_output(["huggingface-cli", "download", model_name], text=True)
-    model_path = output.strip().split("\n")[-1]
+    # output = subprocess.check_output(["huggingface-cli", "download", model_name], text=True)
+    # model_path = output.strip().split("\n")[-1]
+    model_path = "/root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a"
     log_message(f"Model is stored at: {model_path}")
 except subprocess.CalledProcessError as e:
     log_message("Model download failed.")

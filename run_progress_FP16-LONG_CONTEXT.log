@@ -1,0 +1,53 @@
+Run started at Thu May 15 04:55:29 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Llama-2-7b/snapshots/69656aac4cb47911a639f5890ff35b41ceb82e98
+Total combinations to run: 8
+GPUs: 1
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16-LONG_CONTEXT/meta-llama/Meta-Llama-3-8B
+Checkpoint Conversion done successfully
+Engine  creation complete for tp_size=1, isl=20002, osl=1000
+Processing tp_size=1, isl=20002, osl=1000, concurrency=2
+Dataset preparation complete
+Run started at Thu May 15 08:57:49 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Llama-2-7b/snapshots/69656aac4cb47911a639f5890ff35b41ceb82e98
+Total combinations to run: 8
+GPUs: 1
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16-LONG_CONTEXT/meta-llama/Meta-Llama-3-8B
+Checkpoint Conversion done successfully
+Run started at Thu May 15 10:42:19 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a
+Total combinations to run: 8
+GPUs: 1
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16-LONG_CONTEXT/meta-llama/Meta-Llama-3-8B
+Checkpoint Conversion done successfully
+Engine  creation complete for tp_size=1, isl=20002, osl=1000
+Processing tp_size=1, isl=20002, osl=1000, concurrency=2
+Dataset preparation complete
+Processed for tp_size=1, isl=20002, osl=1000, concurrency=2
+Written result to: /workspace_perf/result_fp16-LONG_CONTEXT/meta-llama/Meta-Llama-3-8B/20002+1000+1024+2+1.csv
+Completed: tp_size=1, isl=20002, osl=1000, concurrency=2
+Run started at Fri May 16 06:17:06 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a
+Total combinations to run: 10
+GPUs: 1
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16-LONG_CONTEXT/meta-llama/Meta-Llama-3-8B
+Checkpoint Conversion done successfully
+Engine  creation complete for tp_size=1, isl=20002, osl=1000
+Processing tp_size=1, isl=20002, osl=1000, concurrency=8
+Dataset preparation complete
+Processed for tp_size=1, isl=20002, osl=1000, concurrency=8
+Written result to: /workspace_perf/result_fp16-LONG_CONTEXT/meta-llama/Meta-Llama-3-8B/20002+1000+1024+8+1.csv
+Completed: tp_size=1, isl=20002, osl=1000, concurrency=8
+Run started at Fri May 16 08:31:35 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a
+Total combinations to run: 10
+GPUs: 1
+Storing converted checkpoint at: /workspace_perf/converted-checkpoint-dir_fp16-LONG_CONTEXT/meta-llama/Meta-Llama-3-8B
+Checkpoint Conversion done successfully
+Engine  creation complete for tp_size=1, isl=20002, osl=1000
+Processing tp_size=1, isl=20002, osl=1000, concurrency=16
+Dataset preparation complete

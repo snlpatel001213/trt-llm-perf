@@ -4,15 +4,15 @@
 
 ## start a container 
 1. This is a long running job so start a terminal session with tmux or screen.
-4. start container with precompiled perf libraries 
-```
-mkdir /home/<username>/cache
-sudo docker run -it --gpus all --privileged -v ${PWD}/:/workspace_perf -v /home/<username>/cache:/root/.cache -w /workspace_perf snlpatel/trtllm-prebuilt:v0.17_release bash
-```
-2. Additioanlly install `pip install tqdm colorama openpyxl pandas pandas openpyxl`
-3. git clone git clone  https://github.com/NVIDIA/TensorRT-LLM.git
-4. log in to huggingface `huggingface-cli login --token <your token>`
-  
+2. start container with precompiled perf libraries 
+
+2.1. clone the current repo `git clone https://github.com/snlpatel001213/trt-llm-perf.git`
+1.2. `mkdir /home/<username>/cache`
+2.3. `sudo docker run -it --gpus all --privileged -v ${PWD}/:/workspace_perf -v /home/<username>/cache:/root/.cache -w /workspace_perf  snlpatel/trtllm-prebuilt:v0.17_release bash`
+
+3. Additioanlly install `pip install tqdm colorama openpyxl pandas pandas openpyxl`
+4. clone the repo `git clone  https://github.com/NVIDIA/TensorRT-LLM.git -b release/0.19`
+5. log in to huggingface `huggingface-cli login --token <your token>`
   `${PWD}` is the location where all the perf will be stored.
   `/raid/supatel/cache` is the location where downloaded hf LLM models will be stored. PLEASE CHANGE THIS LOCATION AS PER YOUR SYSTEM. Both `mpi_run_loop_FP16.py` and `mpi_run_loop_FP8.py` must be located at this path. 
 

@@ -9,7 +9,7 @@ import sys
 import http.client, urllib
 
 #define test name
-TEST_NAME = "RIL_MAIN_TEST"
+TEST_NAME = "LONG_CONTEXT"
 # Set up logging
 log_file = f"run_progress_FP16-{TEST_NAME}.log"
 
@@ -48,17 +48,12 @@ def concurrency2request(concurrency):
     return str(concurrency2reqmap[str(concurrency)])
 
 # Define parameters
-model_name = "meta-llama/Meta-Llama-3-70B"
-tp_sizes = [8]
+model_name = "meta-llama/Meta-Llama-3-8B"
+tp_sizes = [1,2]
 isl_osl_combinations = [
-    [128, 128], [256, 128], [512, 128], [1024, 128], [2048, 128], [4096, 128],
-    [128, 256], [256, 256], [512, 256], [1024, 256], [2048, 256], [4096, 256],
-    [128, 512], [256, 512], [512, 512], [1024, 512], [2048, 512], [4096, 512],
-    [128, 1024], [256, 1024], [512, 1024], [1024, 1024], [2048, 1024], [4096, 1024],
-    [128, 2048], [256, 2048], [512, 2048], [1024, 2048], [2048, 2048], [4096, 2048],
-    [128, 4096], [256, 4096], [512, 4096], [1024, 4096], [2048, 4096], [4096, 4096]
+    [20000, 1000]
 ]
-concurrency_values = [2, 8, 32, 128] #
+concurrency_values = [2, 8, 16, 32, 64] #
 # tp_sizes = [8]
 # isl_osl_combinations = [[3100, 200],[12125, 500],[128,128]]
 # concurrency_values = [8, 16, 32] #[2, 4, 8, 16, 32, 64, 128, 256] # 
@@ -81,8 +76,9 @@ log_message("Downloading model...")
 completed_steps = read_log_progress()
 
 try:
-    output = subprocess.check_output(["huggingface-cli", "download", model_name], text=True)
-    model_path = output.strip().split("\n")[-1]
+    # output = subprocess.check_output(["huggingface-cli", "download", model_name], text=True)
+    # model_path = output.strip().split("\n")[-1]
+    model_path = "/root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a"
     log_message(f"Model is stored at: {model_path}")
 except subprocess.CalledProcessError as e:
     log_message("Model download failed.")
@@ -91,9 +87,9 @@ except subprocess.CalledProcessError as e:
 
 # Count total combinations
 total_combinations = len(tp_sizes) * len(isl_osl_combinations) * len(concurrency_values)
+remaining_combinations = total_combinations
 log_message(f"Total combinations to run: {total_combinations}")
 print(Fore.YELLOW + f"Total combinations to run: {total_combinations}" + Style.RESET_ALL)
-pushover(f"Starting RIL Main run with FP16 , total combination to run : {total_combinations}")
 
 # Iterate over combinations
 progress = tqdm(total=total_combinations, desc="Running combinations", colour="blue")
