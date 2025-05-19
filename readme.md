@@ -7,8 +7,9 @@
 2. start container with precompiled perf libraries 
 
 2.1. clone the current repo `git clone https://github.com/snlpatel001213/trt-llm-perf.git`
-1.2. `mkdir /home/<username>/cache`
-2.3. `sudo docker run -it --gpus all --privileged -v ${PWD}/:/workspace_perf -v /home/<username>/cache:/root/.cache -w /workspace_perf  snlpatel/trtllm-prebuilt:v0.17_release bash`
+2.2. `mkdir /home/<username>/cache`
+2.3 `cd trt-llm-perf`
+2.3. `sudo docker run -it --gpus all --privileged -v ${PWD}/:/workspace_perf -v /home/<username>/cache:/root/.cache -w /workspace_perf  snlpatel/trtllm-prebuilt:v0.14_release bash`
 
 3. Additioanlly install `pip install tqdm colorama openpyxl pandas pandas openpyxl`
 4. clone the repo `git clone  https://github.com/NVIDIA/TensorRT-LLM.git -b release/0.19`

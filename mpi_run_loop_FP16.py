@@ -48,7 +48,7 @@ def concurrency2request(concurrency):
     return str(concurrency2reqmap[str(concurrency)])
 
 # Define parameters
-model_name = "meta-llama/Meta-Llama-3-8B"
+model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
 tp_sizes = [1,2]
 isl_osl_combinations = [
     [20000, 1000]
@@ -76,9 +76,10 @@ log_message("Downloading model...")
 completed_steps = read_log_progress()
 
 try:
-    # output = subprocess.check_output(["huggingface-cli", "download", model_name], text=True)
-    # model_path = output.strip().split("\n")[-1]
-    model_path = "/root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a"
+    output = subprocess.check_output(["huggingface-cli", "download", model_name], text=True)
+    model_path = output.strip().split("\n")[-1]
+    # or huggingface-cli download  <model name> and put at below path
+    # model_path = "/root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a"
     log_message(f"Model is stored at: {model_path}")
 except subprocess.CalledProcessError as e:
     log_message("Model download failed.")

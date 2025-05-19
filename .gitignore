@@ -2,3 +2,6 @@ dataset_fp16-LONG_CONTEXT
 engine-dir_fp16-LONG_CONTEXT
 converted-checkpoint-dir_fp16-LONG_CONTEXT
 model.cache
+converted-checkpoint-dir_quant_fp8-RIL_MAIN_TEST
+dataset_fp8-RIL_MAIN_TEST
+engine-dir_fp8-RIL_MAIN_TEST
