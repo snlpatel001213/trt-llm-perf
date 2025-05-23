@@ -51,9 +51,10 @@ def concurrency2request(concurrency):
 model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
 tp_sizes = [1,2]
 isl_osl_combinations = [
-    [20000, 1000]
+    [20000, 1000], [50000, 1000]
 ]
-concurrency_values = [2, 8, 16, 32, 64] #
+# concurrency_values 4 and tp_sizes 1,2 pending
+concurrency_values = [4] #
 # tp_sizes = [8]
 # isl_osl_combinations = [[3100, 200],[12125, 500],[128,128]]
 # concurrency_values = [8, 16, 32] #[2, 4, 8, 16, 32, 64, 128, 256] # 

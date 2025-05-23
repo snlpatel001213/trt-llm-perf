@@ -1,0 +1,209 @@
+Run started at Thu May 22 05:27:02 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a
+Total combinations to run: 42
+GPUs: 8
+Storing quantized checkpoint at: /workspace_perf/converted-checkpoint-dir_quant_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct
+Run started at Thu May 22 05:30:15 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a
+Total combinations to run: 42
+GPUs: 8
+Storing quantized checkpoint at: /workspace_perf/converted-checkpoint-dir_quant_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct
+Run started at Thu May 22 05:31:50 UTC 2025
+Downloading model...
+Model is stored at: /root/.cache/huggingface/hub/models--meta-llama--Meta-Llama-3-8B-Instruct/snapshots/5f0b02c75b57c5855da9ae460ce51323ea669d8a
+Total combinations to run: 36
+GPUs: 1
+Storing quantized checkpoint at: /workspace_perf/converted-checkpoint-dir_quant_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct
+Checkpoint conversion complete for tp_size=1, isl=20002, osl=1000
+Processing tp_size=1, isl=20002, osl=1000, concurrency=2
+Dataset preparation complete
+Completed for tp_size=1, isl=20002, osl=1000, concurrency=2
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+32+2+1.csv
+Completed: tp_size=1, isl=20002, osl=1000, concurrency=2
+Processing tp_size=1, isl=20002, osl=1000, concurrency=4
+Dataset preparation complete
+Completed for tp_size=1, isl=20002, osl=1000, concurrency=4
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+64+4+1.csv
+Completed: tp_size=1, isl=20002, osl=1000, concurrency=4
+Processing tp_size=1, isl=20002, osl=1000, concurrency=8
+Dataset preparation complete
+Completed for tp_size=1, isl=20002, osl=1000, concurrency=8
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+128+8+1.csv
+Completed: tp_size=1, isl=20002, osl=1000, concurrency=8
+Processing tp_size=1, isl=20002, osl=1000, concurrency=16
+Dataset preparation complete
+Completed for tp_size=1, isl=20002, osl=1000, concurrency=16
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+256+16+1.csv
+Completed: tp_size=1, isl=20002, osl=1000, concurrency=16
+Processing tp_size=1, isl=20002, osl=1000, concurrency=32
+Dataset preparation complete
+Completed for tp_size=1, isl=20002, osl=1000, concurrency=32
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+512+32+1.csv
+Completed: tp_size=1, isl=20002, osl=1000, concurrency=32
+Processing tp_size=1, isl=20002, osl=1000, concurrency=64
+Dataset preparation complete
+Completed for tp_size=1, isl=20002, osl=1000, concurrency=64
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+1024+64+1.csv
+Completed: tp_size=1, isl=20002, osl=1000, concurrency=64
+Checkpoint conversion complete for tp_size=1, isl=50002, osl=1000
+Processing tp_size=1, isl=50002, osl=1000, concurrency=2
+Dataset preparation complete
+Completed for tp_size=1, isl=50002, osl=1000, concurrency=2
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+32+2+1.csv
+Completed: tp_size=1, isl=50002, osl=1000, concurrency=2
+Processing tp_size=1, isl=50002, osl=1000, concurrency=4
+Dataset preparation complete
+Completed for tp_size=1, isl=50002, osl=1000, concurrency=4
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+64+4+1.csv
+Completed: tp_size=1, isl=50002, osl=1000, concurrency=4
+Processing tp_size=1, isl=50002, osl=1000, concurrency=8
+Dataset preparation complete
+Completed for tp_size=1, isl=50002, osl=1000, concurrency=8
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+128+8+1.csv
+Completed: tp_size=1, isl=50002, osl=1000, concurrency=8
+Processing tp_size=1, isl=50002, osl=1000, concurrency=16
+Dataset preparation complete
+Completed for tp_size=1, isl=50002, osl=1000, concurrency=16
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+256+16+1.csv
+Completed: tp_size=1, isl=50002, osl=1000, concurrency=16
+Processing tp_size=1, isl=50002, osl=1000, concurrency=32
+Dataset preparation complete
+Completed for tp_size=1, isl=50002, osl=1000, concurrency=32
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+512+32+1.csv
+Completed: tp_size=1, isl=50002, osl=1000, concurrency=32
+Processing tp_size=1, isl=50002, osl=1000, concurrency=64
+Dataset preparation complete
+Completed for tp_size=1, isl=50002, osl=1000, concurrency=64
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+1024+64+1.csv
+Completed: tp_size=1, isl=50002, osl=1000, concurrency=64
+GPUs: 2
+Storing quantized checkpoint at: /workspace_perf/converted-checkpoint-dir_quant_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct
+Checkpoint conversion complete for tp_size=2, isl=20002, osl=1000
+Processing tp_size=2, isl=20002, osl=1000, concurrency=2
+Dataset preparation complete
+Completed for tp_size=2, isl=20002, osl=1000, concurrency=2
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+32+2+2.csv
+Completed: tp_size=2, isl=20002, osl=1000, concurrency=2
+Processing tp_size=2, isl=20002, osl=1000, concurrency=4
+Dataset preparation complete
+Completed for tp_size=2, isl=20002, osl=1000, concurrency=4
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+64+4+2.csv
+Completed: tp_size=2, isl=20002, osl=1000, concurrency=4
+Processing tp_size=2, isl=20002, osl=1000, concurrency=8
+Dataset preparation complete
+Completed for tp_size=2, isl=20002, osl=1000, concurrency=8
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+128+8+2.csv
+Completed: tp_size=2, isl=20002, osl=1000, concurrency=8
+Processing tp_size=2, isl=20002, osl=1000, concurrency=16
+Dataset preparation complete
+Completed for tp_size=2, isl=20002, osl=1000, concurrency=16
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+256+16+2.csv
+Completed: tp_size=2, isl=20002, osl=1000, concurrency=16
+Processing tp_size=2, isl=20002, osl=1000, concurrency=32
+Dataset preparation complete
+Completed for tp_size=2, isl=20002, osl=1000, concurrency=32
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+512+32+2.csv
+Completed: tp_size=2, isl=20002, osl=1000, concurrency=32
+Processing tp_size=2, isl=20002, osl=1000, concurrency=64
+Dataset preparation complete
+Completed for tp_size=2, isl=20002, osl=1000, concurrency=64
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+1024+64+2.csv
+Completed: tp_size=2, isl=20002, osl=1000, concurrency=64
+Checkpoint conversion complete for tp_size=2, isl=50002, osl=1000
+Processing tp_size=2, isl=50002, osl=1000, concurrency=2
+Dataset preparation complete
+Completed for tp_size=2, isl=50002, osl=1000, concurrency=2
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+32+2+2.csv
+Completed: tp_size=2, isl=50002, osl=1000, concurrency=2
+Processing tp_size=2, isl=50002, osl=1000, concurrency=4
+Dataset preparation complete
+Completed for tp_size=2, isl=50002, osl=1000, concurrency=4
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+64+4+2.csv
+Completed: tp_size=2, isl=50002, osl=1000, concurrency=4
+Processing tp_size=2, isl=50002, osl=1000, concurrency=8
+Dataset preparation complete
+Completed for tp_size=2, isl=50002, osl=1000, concurrency=8
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+128+8+2.csv
+Completed: tp_size=2, isl=50002, osl=1000, concurrency=8
+Processing tp_size=2, isl=50002, osl=1000, concurrency=16
+Dataset preparation complete
+Completed for tp_size=2, isl=50002, osl=1000, concurrency=16
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+256+16+2.csv
+Completed: tp_size=2, isl=50002, osl=1000, concurrency=16
+Processing tp_size=2, isl=50002, osl=1000, concurrency=32
+Dataset preparation complete
+Completed for tp_size=2, isl=50002, osl=1000, concurrency=32
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+512+32+2.csv
+Completed: tp_size=2, isl=50002, osl=1000, concurrency=32
+Processing tp_size=2, isl=50002, osl=1000, concurrency=64
+Dataset preparation complete
+Completed for tp_size=2, isl=50002, osl=1000, concurrency=64
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+1024+64+2.csv
+Completed: tp_size=2, isl=50002, osl=1000, concurrency=64
+GPUs: 4
+Storing quantized checkpoint at: /workspace_perf/converted-checkpoint-dir_quant_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct
+Checkpoint conversion complete for tp_size=4, isl=20002, osl=1000
+Processing tp_size=4, isl=20002, osl=1000, concurrency=2
+Dataset preparation complete
+Completed for tp_size=4, isl=20002, osl=1000, concurrency=2
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+32+2+4.csv
+Completed: tp_size=4, isl=20002, osl=1000, concurrency=2
+Processing tp_size=4, isl=20002, osl=1000, concurrency=4
+Dataset preparation complete
+Completed for tp_size=4, isl=20002, osl=1000, concurrency=4
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+64+4+4.csv
+Completed: tp_size=4, isl=20002, osl=1000, concurrency=4
+Processing tp_size=4, isl=20002, osl=1000, concurrency=8
+Dataset preparation complete
+Completed for tp_size=4, isl=20002, osl=1000, concurrency=8
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+128+8+4.csv
+Completed: tp_size=4, isl=20002, osl=1000, concurrency=8
+Processing tp_size=4, isl=20002, osl=1000, concurrency=16
+Dataset preparation complete
+Completed for tp_size=4, isl=20002, osl=1000, concurrency=16
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+256+16+4.csv
+Completed: tp_size=4, isl=20002, osl=1000, concurrency=16
+Processing tp_size=4, isl=20002, osl=1000, concurrency=32
+Dataset preparation complete
+Completed for tp_size=4, isl=20002, osl=1000, concurrency=32
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+512+32+4.csv
+Completed: tp_size=4, isl=20002, osl=1000, concurrency=32
+Processing tp_size=4, isl=20002, osl=1000, concurrency=64
+Dataset preparation complete
+Completed for tp_size=4, isl=20002, osl=1000, concurrency=64
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/20002+1000+1024+64+4.csv
+Completed: tp_size=4, isl=20002, osl=1000, concurrency=64
+Checkpoint conversion complete for tp_size=4, isl=50002, osl=1000
+Processing tp_size=4, isl=50002, osl=1000, concurrency=2
+Dataset preparation complete
+Completed for tp_size=4, isl=50002, osl=1000, concurrency=2
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+32+2+4.csv
+Completed: tp_size=4, isl=50002, osl=1000, concurrency=2
+Processing tp_size=4, isl=50002, osl=1000, concurrency=4
+Dataset preparation complete
+Completed for tp_size=4, isl=50002, osl=1000, concurrency=4
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+64+4+4.csv
+Completed: tp_size=4, isl=50002, osl=1000, concurrency=4
+Processing tp_size=4, isl=50002, osl=1000, concurrency=8
+Dataset preparation complete
+Completed for tp_size=4, isl=50002, osl=1000, concurrency=8
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+128+8+4.csv
+Completed: tp_size=4, isl=50002, osl=1000, concurrency=8
+Processing tp_size=4, isl=50002, osl=1000, concurrency=16
+Dataset preparation complete
+Completed for tp_size=4, isl=50002, osl=1000, concurrency=16
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+256+16+4.csv
+Completed: tp_size=4, isl=50002, osl=1000, concurrency=16
+Processing tp_size=4, isl=50002, osl=1000, concurrency=32
+Dataset preparation complete
+Completed for tp_size=4, isl=50002, osl=1000, concurrency=32
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+512+32+4.csv
+Completed: tp_size=4, isl=50002, osl=1000, concurrency=32
+Processing tp_size=4, isl=50002, osl=1000, concurrency=64
+Dataset preparation complete
+Completed for tp_size=4, isl=50002, osl=1000, concurrency=64
+Written result to: /workspace_perf/result_fp8-RIL_MAIN_TEST/meta-llama/Meta-Llama-3-8B-Instruct/50002+1000+1024+64+4.csv
+Completed: tp_size=4, isl=50002, osl=1000, concurrency=64
+Run processed at Thu May 22 10:54:21 UTC 2025

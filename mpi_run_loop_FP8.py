@@ -49,9 +49,9 @@ def concurrency2request(concurrency):
 
 # Define parameters
 model_name = "meta-llama/Meta-Llama-3-8B-Instruct"
-tp_sizes = [8]
-isl_osl_combinations = [[128 , 1],[256 , 1],[512 , 1],[1024 , 1],[2048 , 1],[4096 , 1]]
-concurrency_values = [2,4,8,16,32,64,128]
+tp_sizes = [1,2,4]
+isl_osl_combinations = [[20000 , 1000],[50000 , 1000]]
+concurrency_values = [2,4,8,16,32,64]
 batch_size = 8
 num_requests = 300
 padding_token = 2
